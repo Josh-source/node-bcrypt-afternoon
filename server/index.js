@@ -9,7 +9,7 @@ const auth = require('./middleware/authMiddleware');
 
 const PORT = 4000;
 
-const{SESSION_SECRET, CONNECTION_STRING} = process.env;
+const{SESSIONS_SECRET, CONNECTION_STRING} = process.env;
 
 const app = express();
 
@@ -23,7 +23,7 @@ app.use(
     session({
         resave:true,
         saveUninitialized: false,
-        secret: SESSION_SECRET,
+        secret: SESSIONS_SECRET,
     })
     );
     app.use(express.json());
