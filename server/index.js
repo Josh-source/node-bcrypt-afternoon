@@ -37,7 +37,7 @@ app.use(
 
     app.post('/api/treasure/user', auth.usersOnly, treasureCtrl.addUserTreasure);
 
-    app.get('/api/treasure/all', auth.usersOnly, treasureCtrl.getAllTreasure);
+    app.get('/api/treasure/all', auth.usersOnly, auth.adminsOnly, treasureCtrl.getAllTreasure);
 
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
